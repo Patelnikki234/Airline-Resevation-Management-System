@@ -1,17 +1,15 @@
 package com.airline.reservation.model;
 
-import com.airline.reservation.entity.Passenger;
+import com.airline.reservation.entity.FlightBooking;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PassengerListResponse {
+@Data
+public class FlightBookingObjectResponse {
     private boolean result;
     private String message;
-    private List<Passenger>passengerList;
+    private FlightBooking Data;
 }

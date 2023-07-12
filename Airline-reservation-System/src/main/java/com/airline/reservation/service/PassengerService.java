@@ -1,7 +1,7 @@
 package com.airline.reservation.service;
 import com.airline.reservation.entity.Passenger;
 import com.airline.reservation.model.MessageResponse;
-import com.airline.reservation.model.PassengerListResponse;
+import com.airline.reservation.model.GetFlightDetailsWithPassengerResponse;
 import com.airline.reservation.model.PassengerResponseObject;
 import com.airline.reservation.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,12 +73,12 @@ public class PassengerService {
 
     }
 
-    public ResponseEntity getAllPassenger() {
-        List<Passenger> listPassengers = passengerRepository.findAll();
-        if (!(listPassengers.isEmpty())){
-            return new ResponseEntity(new PassengerListResponse(true, "successfully get all", listPassengers), HttpStatus.OK);
-        }else{
-            return new ResponseEntity(new MessageResponse(false, "not found Data"), HttpStatus.NOT_FOUND);
-        }
-    }
+//    public ResponseEntity getAllPassenger() {
+//        List<Passenger> listPassengers = passengerRepository.findAll();
+//        if (!(listPassengers.isEmpty())){
+//            return new ResponseEntity(new GetFlightDetailsWithPassengerResponse(true, "successfully get all", listPassengers), HttpStatus.OK);
+//        }else{
+//            return new ResponseEntity(new MessageResponse(false, "not found Data"), HttpStatus.NOT_FOUND);
+//        }
+//    }
 }

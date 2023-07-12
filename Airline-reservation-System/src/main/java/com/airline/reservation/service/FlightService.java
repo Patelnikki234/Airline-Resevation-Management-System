@@ -32,8 +32,8 @@ public class FlightService {
         flight.setDepartureTime(departureTime);
         flight.setArrivalTime(arrivalTime);
         flight.setFare(fare);
-        flight.setCancelFlight(false);
         flight.setTotalSeats(60);
+        flight.setBookedSeats(0);
         flightRepository.save(flight);
         return new ResponseEntity(new MessageResponse(true, "Successfully added flight"), HttpStatus.OK);
     }

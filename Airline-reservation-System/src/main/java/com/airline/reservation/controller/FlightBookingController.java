@@ -26,4 +26,19 @@ public class FlightBookingController {
     public ResponseEntity deleteFlightBooking(@RequestParam(name="bookingId") long bookingId){
         return flightBookingService.deleteFlightBooking(bookingId);
     }
+    @GetMapping("/getByFlightBookingId")
+    public ResponseEntity getByFlightBookingId(@RequestParam(name = "bookingId") Long bookingId){
+        return flightBookingService.getByFlightBookingId(bookingId);
+    }
+
+    @GetMapping("/getAllFlightBooking")
+    public ResponseEntity getAllFlightBooking() {
+        return flightBookingService.getAllFlightBooking();
+    }
+   @GetMapping("/getAllFlightBookingList")
+    public ResponseEntity getAllFlightBookingList()
+    {
+       return flightBookingService.getBookingList();
+   }
 }
+

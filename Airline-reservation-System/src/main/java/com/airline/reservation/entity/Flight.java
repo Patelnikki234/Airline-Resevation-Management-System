@@ -17,6 +17,6 @@ public class Flight {
     private String departureTime;
     private String arrivalTime;
     private long fare;
-    private boolean cancelFlight;
     private  int totalSeats;
+    private int bookedSeats;
 }

@@ -40,9 +40,9 @@ public class PassengerController {
     public ResponseEntity getPassenger(@RequestParam(name = "passengerId") long passengerId) {
         return passengerService.getPassengerById(passengerId);
     }
-    @GetMapping("/getAllPassenger")
-    public ResponseEntity getAllPassenger()
-    {
-        return passengerService.getAllPassenger();
-    }
+//    @GetMapping("/getAllPassenger")
+//    public ResponseEntity getAllPassenger()
+//    {
+//        return passengerService.getAllPassenger();
+//    }
 }

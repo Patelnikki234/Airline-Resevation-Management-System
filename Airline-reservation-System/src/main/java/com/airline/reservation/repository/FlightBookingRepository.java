@@ -6,6 +6,7 @@ import com.airline.reservation.entity.Passenger;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,12 +14,11 @@ import java.util.List;
 @Repository
 @EnableJpaRepositories
 public interface FlightBookingRepository extends JpaRepository<FlightBooking, Long> {
-    boolean existsByPassengerId(long passengerId);
 
     boolean existsByFlightId(long flightId);
 
-    @Query(value = "select MAX(book_seats) from flight_booking", nativeQuery = true)
-    int getMaxBookSeats();
+    @Query(value = "select MAX(book_seats) from flight_booking where flight_id=:flight_Id", nativeQuery = true)
+    int getLastBookedSeat(@Param("flight_Id") long flight_Id);
 
     boolean existsByPassengerIdAndFlightId(long passengerId, long flightId);
 
@@ -26,5 +26,8 @@ public interface FlightBookingRepository extends JpaRepository<FlightBooking, Lo
     //nativeQuery = true)
     // long getPassengerIdAndFlightId(long passengerId, long flightId);
     List<FlightBooking> findByFlightId(long oldFlightId);
+
+
+
 
 }
